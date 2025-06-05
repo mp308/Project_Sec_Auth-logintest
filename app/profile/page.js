@@ -38,9 +38,16 @@ export default function Profile() {
           <p>Role: {session.user.role}</p>
           <button
             onClick={() => signOut({ callbackUrl: '/' })}
-            className="w-full bg-blue-500 text-white py-2 rounded"
+            className="w-full bg-blue-500 text-white py-2 rounded mb-3"
           >
             Logout
+          </button>
+
+           <button
+            onClick={() => router.push('/admin')}
+            className="w-full bg-blue-500 text-white py-2 rounded"
+          >
+            Go to Admin Page
           </button>
         </div>
       </div>

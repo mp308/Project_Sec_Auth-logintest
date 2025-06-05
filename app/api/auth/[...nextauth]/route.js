@@ -6,6 +6,7 @@ import bcrypt from 'bcrypt'
 import { PrismaAdapter } from '@auth/prisma-adapter'
 
 
+
 const prisma = new PrismaClient()
 
 export const authOptions = {
@@ -33,7 +34,7 @@ export const authOptions = {
               role: user.role, // ทำการเพิ่ม role จากการดึงผ่าน database ส่งออกไป
             }
           } else {
-            throw new Error('Invalid email or password')
+            throw new Error('Invalid email or password ')
           }
         },
       }),
@@ -41,7 +42,7 @@ export const authOptions = {
         clientId: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       }),
-      
+    
     ],
     adapter: PrismaAdapter(prisma),
     session: {
